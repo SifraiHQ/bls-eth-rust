@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/herumi/bls-eth-rust.png)](https://travis-ci.org/herumi/bls-eth-rust)
+[![Build Status](https://github.com/herumi/bls-eth-rust/actions/workflows/main.yml/badge.svg)](https://github.com/herumi/bls-eth-rust/actions/workflows/main.yml)
+
 # bls-eth for Rust
 
 This is a wrapper library of [bls](https://github.com/herumi/bls/) with `BLS_ETH=1`.
