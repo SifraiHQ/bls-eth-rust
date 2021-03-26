@@ -2,14 +2,13 @@ name: test
 on: [push]
 
 jobs:
-  build:
-    name: test
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-#    - run: sudo apt install wget
-    - run: wget https://github.com/herumi/bls-eth-go-binary/raw/master/bls/lib/linux/amd64/libbls384_256.a
-    - run: env RUSTFLAGS="-L./" cargo test --verbose
+  #  build:
+  #    name: test
+  #    runs-on: ubuntu-latest
+  #    steps:
+  #    - uses: actions/checkout@v2
+  #    - run: wget https://github.com/herumi/bls-eth-go-binary/raw/master/bls/lib/linux/amd64/libbls384_256.a
+  #    - run: env RUSTFLAGS="-L./" cargo test --verbose
   windows:
     name: Build on Windows
     runs-on: windows-latest
@@ -17,4 +16,4 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: true
-    - run: env RUSTFLAGS="-L./bls-eth-go-binary/bls/lib/windows/amd64/" cargo test --target x86_64-pc-windows-msvc --verbose
+    - run: cd bls; mklib eth; cd ../bls-eth-rust; mkdir bls/eth; set RUSTFLAGS="-L../bls/lib" cargo test --target x86_64-pc-windows-msvc --verbose
