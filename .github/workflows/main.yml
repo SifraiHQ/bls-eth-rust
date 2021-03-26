@@ -16,4 +16,4 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: true
-    - run: cd bls; mklib eth; cd ../bls-eth-rust; mkdir bls/eth; set RUSTFLAGS="-L../bls/lib" cargo test --target x86_64-pc-windows-msvc --verbose
+    - run: cd bls; mklib.bat eth; cd ../bls-eth-rust; mkdir bls/eth; set RUSTFLAGS="-L../bls/lib" cargo test --target x86_64-pc-windows-msvc --verbose
