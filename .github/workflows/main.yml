@@ -16,4 +16,10 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: true
+    - name: Building MCL for Windows
+      run: |
+        call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+        cd D:\a\sifraihq\windows\mcl && call mklib.bat dll
+      shell: cmd
     - run: cd bls; ls eth; cd ../bls-eth-rust; mkdir bls/eth; set RUSTFLAGS="-L../bls/lib" cargo test --target x86_64-pc-windows-msvc --verbose
+      
